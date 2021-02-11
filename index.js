@@ -15,14 +15,14 @@ const cooldowns = {
 
 // Important Global Variables
 let 
-    key = `your-hypixel-key`,           // CHANGE THIS OR THE BOT WONT WORK!
-    token = `your-discord-token`,       // CHANGE THIS OR THE BOT WONT WORK!
+    key = `97beb7a3-0d36-4a4e-8daa-3bb0a68ef567`,           // CHANGE THIS OR THE BOT WONT WORK!
+    token = `NzIyODAwMzY0MDAwMTE2ODQ2.XuoWSw.WHg-iuYzS9KEA39D23KllSxlq_E`,       // CHANGE THIS OR THE BOT WONT WORK!
     prefix = "h!"                       // Change this to yours!
 ;
 // API Helpers
 const embedHelper = { 
     footer: {
-        text: 'Hypixel Monster by tino#0069',                                           // Change this to yours!
+        text: 'Hypixel API by Bulldo344#0069',                                           // Change this to yours!
         image: {
             'green': 'https://cdn.discordapp.com/emojis/722990201307398204.png?v=1',
             'red':   'https://cdn.discordapp.com/emojis/722990201302941756.png?v=1'
@@ -170,7 +170,7 @@ function pad(n){return n<10 ? '0'+n : n}
 
 client.on('ready', s => {
     console.log(`Ready! Connected as ${client.user.username} with prefix '${prefix}'`);
-    client.user.setActivity(`GitHub!`, { type: 'LISTENING' })
+    client.user.setActivity(`Hypixel's API`, { type: 'WATCHING' })
         .then(presence => console.log(`Activity set to '${presence.activities[0].name}'`))
         .catch(console.error);
 });
@@ -180,7 +180,7 @@ client.on('message', m => {
         const args = m.content.slice(prefix.length).split(' ');
         const command = args.shift().toLowerCase();
         
-        if(command == "h" || command == "hypixel") {
+        if(command == "h" || command == "lookup") {
             /* Cooldown */
             let cooldownT = 30 * 1000, cooldownG = cooldowns.hypixel.main.get(m.author.id);
             if(cooldownG) return m.channel.send(`Please wait ${humanizeDuration(cooldownG - Date.now(), { round: true })} before running ${command} again`);
@@ -286,7 +286,7 @@ client.on('message', m => {
                         return medit.edit("\u200b", embed);
                 });
             }).catch(e => function() {
-                medit.edit(`Hypixel API Error`);
+                medit.edit(`Hypixel API Error....Please Wait`);
                 console.log(e);
             });
         });

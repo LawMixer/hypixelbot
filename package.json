@@ -9,8 +9,16 @@
   "author": "GitHub tinopai",
   "license": "MIT",
   "dependencies": {
-    "discord.js": "^12.2.0",
-    "humanize-duration": "^3.23.1",
+    "discord.js": "^12.5.1",
+    "humanize-duration": "^3.24.0",
     "hypixel-api-nodejs": "^0.1.5"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tinopai/hypixelbot.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tinopai/hypixelbot/issues"
+  },
+  "homepage": "https://github.com/tinopai/hypixelbot#readme"
 }
