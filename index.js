@@ -15,7 +15,7 @@ const cooldowns = {
 
 // Important Global Variables
 let 
-    key = `97beb7a3-0d36-4a4e-8daa-3bb0a68ef567`,           // CHANGE THIS OR THE BOT WONT WORK!
+    key = `85580ca4-fd62-475b-b0a3-9cc107d5e7ea`,           // CHANGE THIS OR THE BOT WONT WORK!
     token = `NzIyODAwMzY0MDAwMTE2ODQ2.XuoWSw.WHg-iuYzS9KEA39D23KllSxlq_E`,       // CHANGE THIS OR THE BOT WONT WORK!
     prefix = "h!"                       // Change this to yours!
 ;
@@ -35,7 +35,7 @@ function sendErrorEmbed(channel, error, description) {
         .setColor('#F64B4B')
         .setTitle(`Oops!`)
         .addField(`${error}`, `${description}`)
-        .setThumbnail('https://hypixel.monster/assets/images/hypixel.png')              // Change this to yours!
+        .setThumbnail('https://cdn.discordapp.com/attachments/582689305751978024/809455372221546556/roblox.png')              // Change this to yours!
         .setTimestamp()
         .setFooter(embedHelper.footer.text, embedHelper.footer.image.red)
     return channel.send(exampleEmbed);
@@ -164,7 +164,7 @@ String.prototype.toTimeString = function() {
     let minutes = (hours - rhours) * 60;
     let rminutes = Math.round(minutes);
     return `${rhours}h ${rminutes}m`;
-}
+} 
 // Add leading zeros
 function pad(n){return n<10 ? '0'+n : n}
 
@@ -287,7 +287,7 @@ client.on('message', m => {
                 });
             }).catch(e => function() {
                 medit.edit(`Hypixel API Error....Please Wait`);
-                console.log(e);
+                console.log('Hypixel API Error, Please wait as were trying to fix this');
             });
         });
         }
@@ -368,4 +368,5 @@ client.on('message', m => {
         }
 });
 
-client.login(token);
+
+
