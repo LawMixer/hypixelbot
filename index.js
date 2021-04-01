@@ -16,7 +16,7 @@ const cooldowns = {
 // Important Global Variables
 let 
     key = `85580ca4-fd62-475b-b0a3-9cc107d5e7ea`,           // CHANGE THIS OR THE BOT WONT WORK!
-    token = `NzIyODAwMzY0MDAwMTE2ODQ2.XuoWSw.WHg-iuYzS9KEA39D23KllSxlq_E`,       // CHANGE THIS OR THE BOT WONT WORK!
+    token = `NzIyODAwMzY0MDAwMTE2ODQ2.XuoWSw.ZJNH_Fle59ZBpgILagCsbJxxcAU`,       // CHANGE THIS OR THE BOT WONT WORK!
     prefix = "h!"                       // Change this to yours!
 ;
 // API Helpers
