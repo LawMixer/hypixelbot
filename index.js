@@ -16,13 +16,13 @@ const cooldowns = {
 // Important Global Variables
 let 
     key = `c2a3956a-1f2a-4e15-add3-d6b895f7295b`,           // CHANGE THIS OR THE BOT WONT WORK!
-    token = `ODQyMjIwNzI2MTQwMjcyNjc1.YJyJLA.WWUJosIKHfUkS3jdX1kBFzAa_BI`,       // CHANGE THIS OR THE BOT WONT WORK!
+    token = `ODQyMjIwNzI2MTQwMjcyNjc1.YJyJLA.-zNmb-nhdyOQTfKBS99b1NtYu9w`,       // CHANGE THIS OR THE BOT WONT WORK!
     prefix = "h!"                       // Change this to yours!
 ;
 // API Helpers
 const embedHelper = { 
     footer: {
-        text: 'Hypixel API by Bulldo344#0069',                                           // Change this to yours!
+        text: 'Hypixel Monster by Bulldo344#5731',                                           // Change this to yours!
         image: {
             'green': 'https://cdn.discordapp.com/emojis/722990201307398204.png?v=1',
             'red':   'https://cdn.discordapp.com/emojis/722990201302941756.png?v=1'
@@ -35,7 +35,7 @@ function sendErrorEmbed(channel, error, description) {
         .setColor('#F64B4B')
         .setTitle(`Oops!`)
         .addField(`${error}`, `${description}`)
-        .setThumbnail('https://cdn.discordapp.com/attachments/582689305751978024/809455372221546556/roblox.png')              // Change this to yours!
+        .setThumbnail('https://hypixel.monster/assets/images/hypixel.png')              // Change this to yours!
         .setTimestamp()
         .setFooter(embedHelper.footer.text, embedHelper.footer.image.red)
     return channel.send(exampleEmbed);
@@ -164,13 +164,13 @@ String.prototype.toTimeString = function() {
     let minutes = (hours - rhours) * 60;
     let rminutes = Math.round(minutes);
     return `${rhours}h ${rminutes}m`;
-} 
+}
 // Add leading zeros
 function pad(n){return n<10 ? '0'+n : n}
 
 client.on('ready', s => {
     console.log(`Ready! Connected as ${client.user.username} with prefix '${prefix}'`);
-    client.user.setActivity(`Hypixel's API`, { type: 'WATCHING' })
+    client.user.setActivity(`To Algebra Guild`, { type: 'LISTENING' })
         .then(presence => console.log(`Activity set to '${presence.activities[0].name}'`))
         .catch(console.error);
 });
@@ -180,7 +180,7 @@ client.on('message', m => {
         const args = m.content.slice(prefix.length).split(' ');
         const command = args.shift().toLowerCase();
         
-        if(command == "h" || command == "lookup") {
+        if(command == "h" || command == "hypixel") {
             /* Cooldown */
             let cooldownT = 30 * 1000, cooldownG = cooldowns.hypixel.main.get(m.author.id);
             if(cooldownG) return m.channel.send(`Please wait ${humanizeDuration(cooldownG - Date.now(), { round: true })} before running ${command} again`);
@@ -286,8 +286,8 @@ client.on('message', m => {
                         return medit.edit("\u200b", embed);
                 });
             }).catch(e => function() {
-                medit.edit(`Hypixel API Error....Please Wait`);
-                console.log('Hypixel API Error, Please wait as were trying to fix this');
+                medit.edit(`Hypixel API Error`);
+                console.log(e);
             });
         });
         }
@@ -368,5 +368,4 @@ client.on('message', m => {
         }
 });
 
-
-
+client.login(token);
