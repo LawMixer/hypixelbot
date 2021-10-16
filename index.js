@@ -22,7 +22,7 @@ let
 // API Helpers
 const embedHelper = { 
     footer: {
-        text: 'Hypixel Monster by Bulldo344#5731',                                           // Change this to yours!
+        text: 'Hypixel Monster by Bulldo344#5731',                                       
         image: {
             'green': 'https://cdn.discordapp.com/emojis/722990201307398204.png?v=1',
             'red':   'https://cdn.discordapp.com/emojis/722990201302941756.png?v=1'
@@ -35,7 +35,7 @@ function sendErrorEmbed(channel, error, description) {
         .setColor('#F64B4B')
         .setTitle(`Oops!`)
         .addField(`${error}`, `${description}`)
-        .setThumbnail('https://hypixel.monster/assets/images/hypixel.png')              // Change this to yours!
+        .setThumbnail('https://hypixel.monster/assets/images/hypixel.png')  
         .setTimestamp()
         .setFooter(embedHelper.footer.text, embedHelper.footer.image.red)
     return channel.send(exampleEmbed);
@@ -366,6 +366,21 @@ client.on('message', m => {
                         return m.channel.send(embed);
             });
         }
+        if(command == "") {
+            const embed = new Discord.MessageEmbed()
+            embed.addDescription
+            embed.addFields(
+                {name: `**Test**`, value: `Just a test command`, inline: true},
+            )
+            .setDescription(`Use [Pit Panda](https://pitpanda.rocks/players/${args[0]}) for more (and detailed) information!`)
+
+            cooldowns.hypixel.pit.set(m.author.id, Date.now() + cooldownT);
+            setTimeout(() => cooldowns.hypixel.pit.delete(m.author.id), cooldownT);
+            return m.channel.send(embed);
+
+        }
+
+
 });
 
 client.login(token);
